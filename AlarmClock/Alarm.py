@@ -6,16 +6,17 @@ Alarm Clock "Bot" Example - This is simply just a unit code test for an alarm cl
 The usage of the time and datetime module here will only work if you are running the bot from your device and not from a cloud server because by default the device is registered to your area timezone however
 for a cloud server you would need to manually set a specific time zone
 """
-x = input("Insert command: ")
-y = x.split()
-if y[0] == "!remind":
-    while True:
-        z = datetime.datetime.now()
-        w = z.strftime("%I:%M%p")
-        if w == y[-1]:
-            output = ''.join(y[1:-1])
-            print(output)
-            time.sleep(60)   
-        else:
-            continue
+while True:
+    x = input("Insert command: ")
+    y = x.split()
+    if y[0] == "!remind":
+        while True:
+            z = datetime.datetime.now()
+            w = z.strftime("%I:%M%p")
+            if w == y[-1]:
+                output = ''.join(y[1:-1])
+                print(output)
+                break
+            else:
+                continue
 
